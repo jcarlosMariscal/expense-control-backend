@@ -7,7 +7,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
+model user {
   id    Int     @id @default(autoincrement())
   email String  @unique
   name  String
@@ -18,7 +18,7 @@ model User {
   incomes  Incomes[]
 }
 
-model CategoriesExpenses {
+model categoriesExpenses {
   id  Int     @id @default(autoincrement())
   name String @unique
   description String
@@ -26,7 +26,7 @@ model CategoriesExpenses {
   color String
   expenses  Expenses[]
 }
-model CategoriesIncomes {
+model categoriesIncomes {
   id  Int     @id @default(autoincrement())
   name String @unique
   description String
@@ -34,7 +34,7 @@ model CategoriesIncomes {
   color String
   incomes  Incomes[]
 }
-model Expenses {
+model expenses {
   id  Int     @id @default(autoincrement())
   amount Float
   description String
@@ -44,7 +44,7 @@ model Expenses {
   categoriesExpenses          CategoriesExpenses      @relation(fields: [categoryId], references: [id])
   user          User      @relation(fields: [userId], references: [id])
 }
-model Incomes {
+model incomes {
   id  Int     @id @default(autoincrement())
   amount Float
   description String
