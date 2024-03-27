@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { hashPassword } from "../services/password.service";
-import prisma from "../models/user";
+import prisma from "../models/user.model";
 
 export const getUserById = async (
   req: Request,
